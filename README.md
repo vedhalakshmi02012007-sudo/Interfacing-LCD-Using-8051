@@ -17,8 +17,27 @@ To interface a 16x2 LCD with an 8051 microcontroller and display your name.
 7.Continuously run the program to keep displaying the message.
 
 ## Program :
-
+```
+#include<reg51.h>
+void main()
+{
+unsigned char x,y;
+unsigned int i;
+P1=0x00;
+while(1)
+	{   
+	x=0x01;
+	for(y=0;y<8;y++)	
+		{
+		P1=x;
+    for(i=0;i<60000;i++);
+    x=x<<1;
+    }			
+	}	
+}
+```
 ## Output :
+<img width="1236" height="716" alt="image" src="https://github.com/user-attachments/assets/c1085b4f-9a9f-439b-974f-502f38acdae8" />
 
 
 ## Result :  
